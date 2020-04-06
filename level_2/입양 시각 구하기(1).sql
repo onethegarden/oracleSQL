@@ -1,0 +1,8 @@
+--https://programmers.co.kr/learn/courses/30/lessons/59412
+--몇 시에 입양이 가장 활발하게 일어나는지
+
+SELECT TO_CHAR(DATETIME, 'HH24') HOUR, COUNT(*) COUNT
+FROM ANIMAL_OUTS
+GROUP BY TO_CHAR(DATETIME, 'HH24')
+HAVING TO_CHAR(DATETIME, 'HH24') BETWEEN 9 AND 19
+ORDER BY TO_CHAR(DATETIME, 'HH24')

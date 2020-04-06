@@ -1,0 +1,8 @@
+-- https://programmers.co.kr/learn/courses/30/lessons/59042
+-- 두 테이블 비교하여 한 테이블에 없는 거 찾기
+-- NOT IN, NOT EXISTS, MINUS
+
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_OUTS
+WHERE ANIMAL_ID NOT IN(SELECT ANIMAL_ID FROM ANIMAL_INS)
+ORDER BY ANIMAL_ID
