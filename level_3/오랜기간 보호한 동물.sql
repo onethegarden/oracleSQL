@@ -1,0 +1,11 @@
+--https://programmers.co.kr/learn/courses/30/lessons/59044
+--rownum 이용하기 
+
+SELECT NAME, DATETIME
+FROM (SELECT *
+    FROM ANIMAL_INS
+    ORDER BY DATETIME)
+WHERE ANIMAL_ID NOT IN 
+    (SELECT ANIMAL_ID
+    FROM ANIMAL_OUTS)
+AND ROWNUM<=3
